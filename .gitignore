@@ -6,3 +6,6 @@ env_setup.py
 
 #ignore test_strings file
 test_strings
+
+#ignore any subfolders generated for through testing
+*/*
