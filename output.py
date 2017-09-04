@@ -12,15 +12,16 @@ def verbose_output(fold_in, lead_in):
     print lead_in + "Folder name:\t" + fold_in.name
     #
     if len(fold_in.files) != 0:
-        print "\n" + lead_in + "\tFiles:"
+        print lead_in + "\tFiles:"
         for item in fold_in.files:
             print lead_in + "\t" + item
+        print
     #
     if len(fold_in.subfolders) != 0: 
-        print "\n" + lead_in + "\tSubfolders:"
+        print lead_in + "\tSubfolders:"
         for item in fold_in.subfolders:
             verbose_output(item, lead_in + "\t\t")
-    
+        print
 
 def touch(fname, times=None):
     from os import utime

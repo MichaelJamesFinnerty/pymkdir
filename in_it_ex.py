@@ -3,23 +3,15 @@
 #   #   #   #   #   #   #   #   #   #
 
 def inject(injector, file_list, folder_list):
-    #print "Injecting"
-    
     # replace the % wildcard with the injector sring
-    #for _f in folder_list:print _f    
-        
     file_list[:] = [ _file.replace("%", injector) for _file in file_list ]
     for _fold in folder_list: _fold.name.replace("%", injector)
-        
-    #folder_list[:] = [ _folder.name.replace("%", injector) for _folder in folder_list ]
-    #for _f in folder_list:print _f
         
     return file_list, folder_list
 
 
 def iterate(iterator, file_list, folder_list):
     from objects import fold
-    #print "Iterating"
     
     for _file in file_list:
         if "$" in _file:
@@ -46,7 +38,6 @@ def iterate(iterator, file_list, folder_list):
 
 
 def extend(extension, file_list):
-    #print "Extending"
     # append the extension to each file in the file_list
     file_list[:] = [ _file + extension for _file in file_list ]
     
@@ -58,17 +49,9 @@ def in_it_ex(trail_string, folder):
     file_list, folder_list = folder.files, folder.subfolders
     start_char = trail_string[0]
     
-    #print "in_it_ex-ing@55"    
-    #for f in folder_list:
-        #print f
-    
     # 1 is added back to account for the ommitted leading character
     next_spec_char = determine_next_spec_char(trail_string[1:])+1
     
-    #print "trail_string:\t", trail_string
-    #print "next_spec_char pos:\t", next_spec_char
-    #print "trail_string[1:next_spec_char]:\t", trail_string[1:next_spec_char]
-        
     if start_char == "+":
         injector = trail_string[1:next_spec_char]
         (file_list, folder_list) = inject(injector, file_list, folder_list)
@@ -80,11 +63,6 @@ def in_it_ex(trail_string, folder):
     elif start_char == ".":
         extension = trail_string[:next_spec_char]
         file_list = extend(extension, file_list)
-        
-    #print "in_it_ex-ing@78"
-    #for f in folder_list:
-        #print f
-    #print
         
     if trail_string[next_spec_char:] != "":
         file_list, folder_list = in_it_ex(trail_string[next_spec_char:], folder)

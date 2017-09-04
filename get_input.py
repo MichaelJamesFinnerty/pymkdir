@@ -8,6 +8,9 @@ def get_input():
         strExp = sys.argv[1]
     else:
         
+        #   Welcome the user to the interactive prompt
+        print "\n\nFILE EXPANDER:\n\n"
+    
         #   Prompt user for a strExp input
         #
         #   strExp will be concatenated from the user input 
@@ -24,14 +27,10 @@ def get_input():
                 f += " "   
             strExp += f
 
-    #print "pre-re:", strExp
-            
     #   cleanup whitespace in the strExp
     strExp = re.sub("\s+"," ",strExp)
     strExp = re.sub("{\s+","{",strExp)
     strExp = re.sub("\s+}","}",strExp)
     strExp = re.sub(",\s+",", ",strExp)    
     
-    #print "post-re:", strExp
-            
     return strExp
