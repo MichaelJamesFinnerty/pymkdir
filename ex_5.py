@@ -1,4 +1,4 @@
-#   A lightweight tool for generating complex folder and file structures from strings
+#   A lightweight tool for directly generating complex folder and file structures in python
 #   
 #   Input formatting:
 #     Structured input must be within braces
