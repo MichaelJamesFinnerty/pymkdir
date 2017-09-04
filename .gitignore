@@ -3,3 +3,6 @@
 
 #ignore env_setup files
 env_setup.py
+
+#ignore test_strings file
+test_strings
