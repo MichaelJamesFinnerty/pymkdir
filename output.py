@@ -26,7 +26,7 @@ def touch(fname, times=None):
     from os import utime
     
     with open(fname, 'a'):
-        os.utime(fname, times)
+        utime(fname, times)
     
 def folder_maker(fold_in, base_path):
     from os import mkdir, chdir, getcwd

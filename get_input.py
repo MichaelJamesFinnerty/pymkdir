@@ -17,12 +17,21 @@ def get_input():
         while "]" not in strExp:
             f = raw_input(">>> \t")
             
+            
+            
             #   remove trailing comma
             if f[-1:] == ",":
                 f += " "   
             strExp += f
 
+    #print "pre-re:", strExp
+            
     #   cleanup whitespace in the strExp
     strExp = re.sub("\s+"," ",strExp)
+    strExp = re.sub("{\s+","{",strExp)
+    strExp = re.sub("\s+}","}",strExp)
+    strExp = re.sub(",\s+",", ",strExp)    
     
+    #print "post-re:", strExp
+            
     return strExp

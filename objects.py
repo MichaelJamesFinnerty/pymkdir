@@ -9,15 +9,6 @@ class fold(object):
         self.subfolders = []
 
     
-class trail_obj(object):
-     def __init__(self):
-        self.trail = ""
-        self.extension = ""
-        self.iterator = ""
-        self.injector = ""
-
-    
-
 class kernel(object):
     
     def __init__(self, input_string):
@@ -37,10 +28,6 @@ class kernel(object):
             self.group_contents = self.get_group_contents()
             self.group_trail = self.get_group_trail()
 
-
-
-            
-            
             
     def det_endChar(self):
         #   returns the end grouping character
@@ -81,3 +68,4 @@ class kernel(object):
     #   identify the grouping name
     def get_group_name(self):
         return self.kstring[:self.kstring.find("/")] if self.kstring.find("/") > -1 else ""
+    
