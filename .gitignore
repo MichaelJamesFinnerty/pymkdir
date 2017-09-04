@@ -1,0 +1,5 @@
+#ignore generated .pyc files
+*.pyc
+
+#ignore env_setup files
+env_setup.py
