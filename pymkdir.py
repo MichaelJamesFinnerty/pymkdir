@@ -69,14 +69,14 @@ def parse(input_string, output_folder):
             #   be appended into the :subfolders list for the
             #   current output_folder
             #
-            if element.group_char_open == "{":
-                sub_folder.name = element.group_name
-                output_folder.subfolders.append(sub_folder)
+            #if element.group_char_open == "{":
+            sub_folder.name = element.group_name
+            output_folder.subfolders.append(sub_folder)
                                 
             #   if it is just a file grouping, the individual files
             #   contents will be appended to the :files list for the
             #   current output folder
-            elif element.group_char_open == "(":
+            if element.group_char_open == "(":
                 for _file in sub_folder.files:
                     output_folder.files.append(_file) 
                 
