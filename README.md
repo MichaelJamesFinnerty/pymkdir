@@ -2,7 +2,7 @@
 ###### A lightweight tool for directly generating complex folder and file structures in python
 
 
-####Provide strings and get populated folder structures
+#### Provide strings and get populated folder structures
 ```
 pymkdir.main("[spam/{eggs.py}]")
 
@@ -14,7 +14,7 @@ Folder name:	/path/to/active/dir
 ```
 
 
-####Use injectors (% with +example)
+#### Use injectors (% with +example)
 ```
 pymkdir.main("[spam/{%.py %_and_spam.js}+eggs]")
 
@@ -23,11 +23,11 @@ Folder name:	/path/to/active/dir
 		Folder name:	spam
 			Files:
 			eggs.py
-      eggs_and_spam.js
+      			eggs_and_spam.js
 ```
 
 
-Use iterators ($ with *n)
+#### Use iterators ($ with *n)
 ```
 pymkdir.main("[spam/{eggs_$.py}*3]")
 
@@ -41,7 +41,7 @@ Folder name:	/path/to/active/dir
 ```
 
 
-Apply file extensions (.example)
+#### Apply file extensions (.example)
 ```
 pymkdir.main("[spam/{eggs, spam_and_eggs}.py]")
 
@@ -54,7 +54,7 @@ Folder name:	/path/to/active/dir
 ```
 
 
-Create groupings for uniform handling with parenthesis
+#### Create groupings for uniform handling with parenthesis
 ```
 pymkdir.main("[spam/{(eggs, spam).js, index.html}]")
 
@@ -68,19 +68,19 @@ Folder name:	/path/to/active/dir
 ```
 
 
-Nest groupings
+#### Nest groupings
 
 
-Nest folders
+#### Nest folders
 
 
-Nest folders in groups
+#### Nest folders in groups
 
 
-Nest groups in folders
+#### Nest groups in folders
 
 
-Combine to create complex folder structures
+#### Combine to create complex folder structures
 ```
 [folder/{
     index.html, 
