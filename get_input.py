@@ -27,10 +27,28 @@ def get_input():
                 f += " "   
             strExp += f
 
+    print "Pre-re:\t", strExp
+            
     #   cleanup whitespace in the strExp
     strExp = re.sub("\s+"," ",strExp)
+    
+    strExp = re.sub("\s{+","{",strExp)    
     strExp = re.sub("{\s+","{",strExp)
     strExp = re.sub("\s+}","}",strExp)
+    strExp = re.sub("}\s+","}",strExp)
+    
+    strExp = re.sub("\s\(+","(",strExp)    
+    strExp = re.sub("\(\s+","(",strExp)
+    strExp = re.sub("\s+\)",")",strExp)
+    strExp = re.sub("\)\s+",")",strExp)
+    
+    strExp = re.sub("\s\[+","[",strExp)    
+    strExp = re.sub("\[\s+","[",strExp)
+    strExp = re.sub("\s+\]","]",strExp)
+    strExp = re.sub("\]\s+","]",strExp)
+    
     strExp = re.sub(",\s+",", ",strExp)    
+    
+    print "Pst-re:\t", strExp
     
     return strExp
