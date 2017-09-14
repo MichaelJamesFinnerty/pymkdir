@@ -71,10 +71,12 @@ Folder name:	/path/to/active/dir
 #### Nest groupings
 ```
 pymkdir.main("[ spam/{ ( %.html, ( %, %_and_eggs ).js )+spam } ]")
+pymkdir.main("[ spam/{(%.html, (%, %_and_eggs).js)+spam}]")
 ```
 
 #### Nest folders
 ```
+
 ```
 
 

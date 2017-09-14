@@ -95,11 +95,13 @@ def parse(input_string, output_folder):
 def main(strExp="", vbose=False):
 
     from output import verbose_output, touch, folder_maker
-    from get_input import get_input
+    from get_input import get_input, format_input
 
     #   Set the input string expression (strExp)
     if strExp == "":
         strExp = get_input()
+    else:
+        strExp = format_input(strExp)
     
     #process parsed elements into the folder object
     result_folder = parse(strExp[1:-1], fold())
@@ -108,9 +110,12 @@ def main(strExp="", vbose=False):
         try:
             verbose_output(result_folder, "")
         except:
-            print "ERROR"
+            print "VERBOSE_OUTPUT ERROR"
 
-    #folder_maker(result_folder, "./")
+    try:
+        folder_maker(result_folder, "./")
+    except:
+        print "FOLDER_MAKER ERROR"
     return result_folder
     
 if __name__ == '__main__':

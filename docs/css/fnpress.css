@@ -1,0 +1,17 @@
+.graf {
+    color: Navy;
+}
+
+*[class^="header"] {
+    color: Snow;
+}
+
+code {
+    background: Silver;
+    color: Navy;
+    padding: 1vh;
+}
+
+
+
+/*DodgerBlue,LightSkyBlue,Silver,Snow,rgb(45, 47, 51)*/
