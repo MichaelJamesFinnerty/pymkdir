@@ -9,3 +9,4 @@ test_strings
 
 #ignore any subfolders generated for through testing
 */*
+!docs/*

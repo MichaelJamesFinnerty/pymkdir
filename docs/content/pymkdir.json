@@ -1,0 +1,28 @@
+pymkdir_data = `[
+    {
+    "Publication Announcement: pymkdir":"<img src='content/pymkdr_logo.png' id='next_button'>",
+       "#1":["Announcing the initial publication (currently through github, and soon via pip) of the pymkdir program and module for python.",
+
+       "pymkdir (say it like 'pie-maker') is a lightweight tool for directly generating complex folder and file structures in python.",
+
+       {"Need to throw together a basic website structure?": 
+         ["Simply feed pymkdir the command",
+           "#![site/{ index.html, css/{style.css}, js/{main.js} }]"
+           ]},
+
+       {"Need to make quarterly data folders for every year since 2011?": 
+         ["Use built-in iteration and string injection:",
+           "#![(201$/{ %$/{} }+data_q*4 )*7]"
+           ]},
+
+       {"Need your program to spit out a timestamped log file?":
+         ["Just feed pymkdir the timestamp as part of the input string:",
+           "#!'[' + datetime.datetime.now().isoformat() + '_log.txt]'"
+           ]},
+
+       "Check it out and fork it on <a href='https://github.com/MichaelJamesFinnerty/pymkdir/'>github</a>, where collaborators are welcome. Highlights of the next version will be greater control over the iteration, including HEX, alphabetic, day, and month iteration.",
+
+       "Watch this space for additional projects including json driven html templating, an SEC records search tool, and various generational algorithms."]
+
+    }
+]`

@@ -1,5 +1,4 @@
 def get_input():
-    import re
     import sys
     strExp = ""
     
@@ -19,18 +18,40 @@ def get_input():
         print ">>> (--Format: [folder/{(file$.html)*4 sub/{%_index.html, %_thumbs.db}+test (example$)*2.js}]--)"
         while "]" not in strExp:
             f = raw_input(">>> \t")
-            
-            
-            
+                        
             #   remove trailing comma
             if f[-1:] == ",":
                 f += " "   
             strExp += f
 
+    strExp = format_input(strExp)
+            
+    return strExp
+
+def format_input(strExp):
+    import re
+    print "Pre-re:\t", strExp
+            
     #   cleanup whitespace in the strExp
     strExp = re.sub("\s+"," ",strExp)
+    
+    strExp = re.sub("\s{+","{",strExp)    
     strExp = re.sub("{\s+","{",strExp)
     strExp = re.sub("\s+}","}",strExp)
+    strExp = re.sub("}\s+","}",strExp)
+    
+    strExp = re.sub("\s\(+","(",strExp)    
+    strExp = re.sub("\(\s+","(",strExp)
+    strExp = re.sub("\s+\)",")",strExp)
+    strExp = re.sub("\)\s+",")",strExp)
+    
+    strExp = re.sub("\s\[+","[",strExp)    
+    strExp = re.sub("\[\s+","[",strExp)
+    strExp = re.sub("\s+\]","]",strExp)
+    strExp = re.sub("\]\s+","]",strExp)
+    
     strExp = re.sub(",\s+",", ",strExp)    
     
-    return strExp
+    print "Pst-re:\t", strExp
+    
+    return strExp    

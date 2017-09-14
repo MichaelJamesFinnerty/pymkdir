@@ -1,0 +1,42 @@
+#main {
+    position: relative;
+    top: 0vh;
+    padding-bottom: 3vh !important;
+}
+
+#main > h1 {
+    margin-top: 2vh;
+}
+
+
+
+
+
+
+#footer {
+    position: relative;
+    top: 26vh;
+}
+
+
+
+
+*[class^="header"] {
+    margin: 0;
+}
+
+
+
+
+
+
+#main , #footer{
+    width: 80vw;
+    background: LightSkyBlue;    
+    padding: 15px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 6vw;
+}

@@ -16,7 +16,7 @@ Folder name:	/path/to/active/dir
 
 #### Use injectors (% with +example)
 ```
-pymkdir.main("[spam/{%.py %_and_spam.js}+eggs]")
+pymkdir.main("[spam/{%.py, %_and_spam.js}+eggs]")
 
 Folder name:	/path/to/active/dir
 	Subfolders:
@@ -69,9 +69,15 @@ Folder name:	/path/to/active/dir
 
 
 #### Nest groupings
-
+```
+pymkdir.main("[ spam/{ ( %.html, ( %, %_and_eggs ).js )+spam } ]")
+pymkdir.main("[ spam/{(%.html, (%, %_and_eggs).js)+spam}]")
+```
 
 #### Nest folders
+```
+
+```
 
 
 #### Nest folders in groups
